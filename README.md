@@ -1,4 +1,4 @@
-# tiny-convolution
+# tinyconv
 
 Eine kleine konvolution
 
