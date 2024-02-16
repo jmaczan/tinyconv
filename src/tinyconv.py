@@ -44,11 +44,3 @@ def image_to_image(
         .convert("RGB")
         .save(output_image_path)
     )
-
-
-if __name__ == "__main__":
-    image = np.array(Image.open("kirby.png").convert("RGB"))
-    kernel = UnsharpMasking
-
-    image = Image.fromarray(tinyconv(image, kernel.as_ndarray())).convert("RGB")
-    image.save("output.png")
