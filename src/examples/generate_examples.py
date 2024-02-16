@@ -10,10 +10,13 @@ from src.tinyconv import tinyconv
 def generate_examples():
     kernels = [BoxBlur, GaussianBlur, UnsharpMasking, EdgeDetection]
 
-    image = np.array(Image.open('kirby.png').convert('RGB'))
+    image = np.array(Image.open("kirby.png").convert("RGB"))
 
     for kernel in kernels:
-        Image.fromarray(tinyconv(image, kernel.as_ndarray())).convert('RGB').save(f"examples/{kernel.name}.png")
+        Image.fromarray(tinyconv(image, kernel.as_ndarray())).convert("RGB").save(
+            f"examples/{kernel.name}.png"
+        )
+
 
 if __name__ == "__main__":
     generate_examples()
