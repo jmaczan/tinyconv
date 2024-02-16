@@ -1,0 +1,2 @@
+numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1707225689808/work/dist/numpy-1.26.4-cp39-cp39-macosx_11_0_arm64.whl#sha256=989042d872faf31c0434bd99fec5ec09b5c5d9a0b8125edd0ae869c5d8851048
+pillow @ file:///Users/runner/miniforge3/conda-bld/pillow_1704252271887/work
