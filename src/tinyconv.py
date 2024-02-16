@@ -4,7 +4,7 @@ from kernel.box_blur import BoxBlur
 from kernel.gaussian_blur import GaussianBlur
 
 from kernel.kernel import Kernel
-from unsharp_masking import UnsharpMasking
+from kernel.unsharp_masking import UnsharpMasking
 
 
 def tinyconv(image: np.ndarray, kernel: Kernel) -> np.ndarray:
