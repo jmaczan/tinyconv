@@ -3,8 +3,6 @@ from PIL import Image
 
 from src.kernel.kernel import Kernel
 from src.kernel.box_blur import BoxBlur
-from src.kernel.gaussian_blur import GaussianBlur
-from src.kernel.unsharp_masking import UnsharpMasking
 
 
 def tinyconv(image: np.ndarray, kernel: np.ndarray) -> np.ndarray:
