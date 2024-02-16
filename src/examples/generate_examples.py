@@ -1,6 +1,6 @@
 import numpy as np
 from PIL import Image
-
+from src.kernel.edge_detection import EdgeDetection
 from src.kernel.box_blur import BoxBlur
 from src.kernel.gaussian_blur import GaussianBlur
 from src.kernel.unsharp_masking import UnsharpMasking
@@ -8,7 +8,7 @@ from src.tinyconv import tinyconv
 
 
 def generate_examples():
-    kernels = [BoxBlur, GaussianBlur, UnsharpMasking]
+    kernels = [BoxBlur, GaussianBlur, UnsharpMasking, EdgeDetection]
 
     image = np.array(Image.open('kirby.png').convert('RGB'))
 

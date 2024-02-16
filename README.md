@@ -1,5 +1,9 @@
 # 🌸 tinyconv
 
+Simple image with kernel convolution implementation in NumPy and Python for educational purposes and fun!
+
+See [src/tinyconv.py](src/tinycon.py) for the code
+
 Commonly used kernels are implemented in [src/kernel](src/kernel)
 
 ## Examples
@@ -12,9 +16,9 @@ Commonly used kernels are implemented in [src/kernel](src/kernel)
 
 <p align="center"><img width="128" src="kirby.png" alt="Original Kirby">&nbsp;<img width="128" src="examples/unsharp_masking.png" alt="Convoluted Kirby"></p>
 
-### Gaussian blur
+### Edge detection
 
-<p align="center"><img width="128" src="kirby.png" alt="Original Kirby">&nbsp;<img width="128" src="examples/gaussian_blur.png" alt="Convoluted Kirby"></p>
+<p align="center"><img width="128" src="kirby.png" alt="Original Kirby">&nbsp;<img width="128" src="examples/edge_detection.png" alt="Convoluted Kirby"></p>
 
 ## License
 
