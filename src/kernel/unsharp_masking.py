@@ -1,5 +1,5 @@
 import numpy as np
-from kernel.kernel import Kernel
+from src.kernel.kernel import Kernel
 
 
 def unsharp_masking() -> np.ndarray:
@@ -10,4 +10,4 @@ def unsharp_masking() -> np.ndarray:
                             [4, 16, 24, 16, 4]])
 
 
-UnsharpMasking = Kernel(unsharp_masking)
+UnsharpMasking = Kernel(as_ndarray=unsharp_masking, name="unsharp_masking")

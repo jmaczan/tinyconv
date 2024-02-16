@@ -1,5 +1,5 @@
 import numpy as np
-from kernel.kernel import Kernel
+from src.kernel.kernel import Kernel
 
 
 def gaussian_blur() -> np.ndarray:
@@ -8,4 +8,4 @@ def gaussian_blur() -> np.ndarray:
                             [1, 2, 1]])
 
 
-GaussianBlur = Kernel(gaussian_blur)
+GaussianBlur = Kernel(as_ndarray=gaussian_blur, name="gaussian_blur")

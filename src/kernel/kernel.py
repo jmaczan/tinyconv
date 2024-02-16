@@ -6,3 +6,4 @@ T = TypeVar("T")
 
 class Kernel(NamedTuple):
     as_ndarray: Callable[[], np.ndarray]
+    name: str

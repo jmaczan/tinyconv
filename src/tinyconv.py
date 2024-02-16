@@ -1,18 +1,17 @@
 import numpy as np
 from PIL import Image
-from kernel.box_blur import BoxBlur
-from kernel.gaussian_blur import GaussianBlur
+from src.kernel.box_blur import BoxBlur
+from src.kernel.gaussian_blur import GaussianBlur
 
-from kernel.kernel import Kernel
-from kernel.unsharp_masking import UnsharpMasking
+from src.kernel.kernel import Kernel
+from src.kernel.unsharp_masking import UnsharpMasking
 
 
-def tinyconv(image: np.ndarray, kernel: Kernel) -> np.ndarray:
+def tinyconv(image: np.ndarray, kernel: np.ndarray) -> np.ndarray:
     image_height, image_width, rgb_channels = image.shape
 
-    kernel_ndarray = kernel.as_ndarray()
-    kernel_width = int((kernel_ndarray.shape[0] - 1)/2)
-    kernel_height = int((kernel_ndarray.shape[1] - 1)/2)
+    kernel_width = int((kernel.shape[0] - 1)/2)
+    kernel_height = int((kernel.shape[1] - 1)/2)
     
     output = np.copy(image)
 
@@ -20,7 +19,7 @@ def tinyconv(image: np.ndarray, kernel: Kernel) -> np.ndarray:
         for vertical_index in range(kernel_height, image_height - kernel_height):
             for horizontal_index in range(kernel_width, image_width - kernel_width):
                 pixel_surrounding = image[vertical_index-kernel_height:vertical_index+kernel_height+1, horizontal_index-kernel_width:horizontal_index+kernel_width+1, channel]
-                output[vertical_index, horizontal_index, channel] = np.sum(pixel_surrounding * kernel_ndarray)
+                output[vertical_index, horizontal_index, channel] = np.sum(pixel_surrounding * kernel)
 
     return output
 
@@ -28,5 +27,5 @@ if __name__ == "__main__":
     image = np.array(Image.open('kirby.png').convert('RGB'))
     kernel = UnsharpMasking
     
-    image = Image.fromarray(tinyconv(image, kernel)).convert('RGB')
+    image = Image.fromarray(tinyconv(image, kernel.as_ndarray())).convert('RGB')
     image.save("output.png")
