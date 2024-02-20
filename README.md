@@ -1,5 +1,7 @@
 # 🌸 tinyconv
 
+Accompanying resource: [Blog post for building it from scratch by yourself](https://maczan.pl/p/so-you-want-to-code-a-convolution)
+
 Simple image with kernel convolution implementation in NumPy and Python for educational purposes and fun!
 
 See [src/tinyconv.py](src/tinycon.py) for the code
